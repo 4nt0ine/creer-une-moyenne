@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(189, 209, 209);
+}
+.bloc{
+    margin-left: 33%;
+    border-radius: 5px, ;
+}
+h1{
+    color: #008C46;
+}
+img{
+    border-radius: 5px, rgb(201, 41, 41) ; 
+}
