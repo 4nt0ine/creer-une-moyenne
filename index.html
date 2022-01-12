@@ -1,172 +1,191 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ma_moyenne</title>
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link href="assets/css/reset.css" rel="stylesheet" />
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href=".assets//css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-    <script src="<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
-    
-</head>
-<header>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/app.js"></script>
+  </head>
+  <header>
     <div class="header"><p>Calcule ta moyenne</p></div>
-</header>
-<body>
+  </header>
+  <body>
     <div class="form-moyenne">
-        <div class="div-form-note">   
-            <form method="post" class="form-note">
-                <p class="js-nb-note"></p>
-                
-                <label>Note :
-                <input class="note">
-                </label>
-                <p class="d-none error error-note">Note invalide ( Saisir une note entre 0 et 20 )</p>
-                
+      <div class="div-form-note">
+        <form method="post" class="form-note">
+          <p class="js-nb-note"></p>
 
-                <label class="coef">Coeficient : <p class="result-coef">X</p>
-                    <input type="range" min="0" max="10" step="0.5" class="coef-range" value="1">
-                    
-                    
-                </label>
+          <label
+            >Note :
+            <input class="note" />
+          </label>
+          <p class="d-none error error-note">
+            Note invalide ( Saisir une note entre 0 et 20 )
+          </p>
 
+          <label class="coef"
+            >Coeficient :
+            <p class="result-coef">X</p>
+            <input
+              type="range"
+              min="0"
+              max="10"
+              step="0.5"
+              class="coef-range"
+              value="1"
+            />
+          </label>
 
-                <select class="mat">
-                    <option value="">-- Choisissez une matière --</option>
-                    <option value="Mathématiques">Mathématiques</option>
-                    <option value="Francais">Francais</option>
-                    <option value="Anglais">Anglais</option>
-                    <option value="Histoire-Géographie">Histoire-Géographie</option>
-                    <option value="Physique-Chimie">Physique-Chimie</option>
-                    <option value="SVT">SVT</option>
-                </select>
-                <p class="d-none error error-mat">Champ invalide ( Veuillez spécifier votre matière )</p>
+          <select class="mat">
+            <option value="">-- Choisissez une matière --</option>
+            <option value="Mathématiques">Mathématiques</option>
+            <option value="Francais">Francais</option>
+            <option value="Anglais">Anglais</option>
+            <option value="Histoire-Géographie">Histoire-Géographie</option>
+            <option value="Physique-Chimie">Physique-Chimie</option>
+            <option value="SVT">SVT</option>
+          </select>
+          <p class="d-none error error-mat">
+            Champ invalide ( Veuillez spécifier votre matière )
+          </p>
 
+          <label class="date"
+            >Date :
+            <input type="date" class="date-form" />
+            <p class="d-none error error-date">
+              Date non valide ( Veuillez spécifier une date )
+            </p>
+          </label>
 
-                <label class="date">Date :
-                    <input type="date" class="date-form">
-                    <p class="d-none error error-date">Date non valide ( Veuillez spécifier une date )</p>
-                    
-                    
-                </label>
+          <label class="d-none other-mat"
+            >Autre :
+            <input name="submitted-name" autocomplete="name" />
+          </label>
+        </form>
 
-
-
-                <label class="d-none other-mat">Autre :
-                    <input name="submitted-name" autocomplete="name">
-                </label>
-
-                
-            </form>
-   
-            <div class="div-btn">
-                <button class="add-note btn">Ajouter</button>
-                <button class="return-btn btn">Retour</button>
-                <button class="val-btn btn">Valider</button>
-            </div>
+        <div class="div-btn">
+          <button class="add-note btn">Ajouter</button>
+          <button class="return-btn btn">Retour</button>
+          <button class="val-btn btn">Valider</button>
         </div>
+      </div>
     </div>
-
-
 
     <div class="div-to-export" id="export">
-
-
-        <div class="result-moy-and-ecart d-none">
-            <div class="flex-re">
-                <div class="moy-result">
-                    <h2>Votre moyenne est de :</h2>
-                    <p></p>
-                </div>
-                <div class="ecart-result">
-                    <h2>Votre écart type est de :</h2>
-                    <p></p>
-                </div>
-                <div class="back-to-enter-nb">
-                    <button class="btn btn-back-to-enter-nb">Retour</button>
-                </div>
-                <div class="export-btn">
-                    <button class="btn btn-export">Exporter</button>
-                </div>
-            </div>
+      <div class="result-moy-and-ecart d-none">
+        <div class="flex-re">
+          <div class="moy-result">
+            <h2>Votre moyenne est de :</h2>
+            <p></p>
+          </div>
+          <div class="ecart-result">
+            <h2>Votre écart type est de :</h2>
+            <p></p>
+          </div>
+          <div class="back-to-enter-nb">
+            <button class="btn btn-back-to-enter-nb">Retour</button>
+          </div>
+          <div class="export-btn">
+            <button class="btn btn-export">Exporter</button>
+          </div>
         </div>
+      </div>
 
-        <div class="result-note">
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="2">Notes entrées</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="num-tab">
-                        <td class="td-start">Numéro</td>
-                    
-                    </tr>
-                    <tr class="note-tab">
-                        <td class="td-start">Note</td>
-                    
-                    </tr>
-                    <tr class="coef-tab">
-                        <td class="td-start">Coefficient</td>
-                        
-                    </tr>
-                    <tr class="mat-tab">
-                        <td class="td-start">Matière</td>
-                        
-                    </tr>
-                    <tr class="date-tab">
-                        <td class="td-start">Date</td>
-                        
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-
-        </div>
-
-        
-        <div class="result-graph">
-        
-            <div class="bloc d-none">
-                <div class="moynne_0_10">
-                    <img class="tom border border-dark" src="./img/1-607.jpeg" width="400px">
-                    <p class="text-uppercase">Reste éveillé pas bon du tout ta moyenne, mais bosse encore .</p>
-                    
-                </div>
-        
-                <div class="moynne_10_13">
-                    <img class="tom border border-dark" src="../" alt="" width="400px">
-                    <p class="text-uppercase">Super tu as la moyenne.</p>
-                    
-                    
-                </div>
-            
-                <div class="moyenne_13_16">
-                    <img class="tom border border-dark" src="./img/e75d78f3acfdd17525cc0a71ab721fd2.jpg" alt="" width="400px">
-                    <p class="text-uppercase">Bravo ta moyenne est haute.</p>
-                    
-                </div>
-            
-                <div class="moyenne_16_20">
-                    <img class="tom border border-dark" src="assets/img/R.jfif" alt="" width="400px">
-                    <p class="text-uppercase">très bien, ta moyenne est super.</p>  
-                    
-                </div>
-                <div class="moyenne_20">
-                    <img class="tom border border-dark" src="assets/img/excellent.jpg" alt="" width="400px">
-                    <p class="text-uppercase">Tu es excelent(e) ta moyenne est génial.</p>  
-                    
-                </div>
-            </div>
-
+      <div class="result-note">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">Notes entrées</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="num-tab">
+              <td class="td-start">Numéro</td>
+            </tr>
+            <tr class="note-tab">
+              <td class="td-start">Note</td>
+            </tr>
+            <tr class="coef-tab">
+              <td class="td-start">Coefficient</td>
+            </tr>
+            <tr class="mat-tab">
+              <td class="td-start">Matière</td>
+            </tr>
+            <tr class="date-tab">
+              <td class="td-start">Date</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-</body>
+    <div class="result-graph">
+      <div class="bloc d-none">
+        <div class="moynne_0_10">
+          <img
+            class="tom border border-dark"
+            src="./img/1-607.jpeg"
+            width="400px"
+          />
+          <p class="text-uppercase">
+            Reste éveillé pas bon du tout ta moyenne, mais bosse encore .
+          </p>
+        </div>
+
+        <div class="moynne_10_13">
+          <img class="tom border border-dark" src="../" alt="" width="400px" />
+          <p class="text-uppercase">Super tu as la moyenne.</p>
+        </div>
+
+        <div class="moyenne_13_16">
+          <img
+            class="tom border border-dark"
+            src="./img/e75d78f3acfdd17525cc0a71ab721fd2.jpg"
+            alt=""
+            width="400px"
+          />
+          <p class="text-uppercase">Bravo ta moyenne est haute.</p>
+        </div>
+
+        <div class="moyenne_16_20">
+          <img
+            class="tom border border-dark"
+            src="assets/img/R.jfif"
+            alt=""
+            width="400px"
+          />
+          <p class="text-uppercase">très bien, ta moyenne est super.</p>
+        </div>
+        <div class="moyenne_20">
+          <img
+            class="tom border border-dark"
+            src="assets/img/excellent.jpg"
+            alt=""
+            width="400px"
+          />
+          <p class="text-uppercase">Tu es excelent(e) ta moyenne est génial.</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
